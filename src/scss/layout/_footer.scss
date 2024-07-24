@@ -1,0 +1,16 @@
+@use "base/variables" as v;
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    font-size: 16px;
+    padding: 0px 20px;
+    background-color: v.$morado;
+
+    h3, p{
+        color: white;
+    }
+}

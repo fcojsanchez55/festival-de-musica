@@ -1,0 +1,32 @@
+{
+  "name": "festivalmusica",
+  "version": "1.0.0",
+  "description": "Aprendiendo SASS y NPM",
+  "main": "index.js",
+  "type": "module",
+  "_comentario": "utilizar 'type': 'module' si usas export en gulp para funciones etc..",
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css",
+    "dev": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fcojsanchez55/festival-musica.git"
+  },
+  "keywords": [
+    "SASS",
+    "NPM",
+    "GULP"
+  ],
+  "author": "Jose Sanchez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fcojsanchez55/festival-musica/issues"
+  },
+  "homepage": "https://github.com/fcojsanchez55/festival-musica#readme",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.77.6"
+  }
+}

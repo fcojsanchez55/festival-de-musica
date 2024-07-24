@@ -1,0 +1,80 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.gallery{
+    @include m.contenedor;
+
+    &-image{
+        @include m.grid(1, 2rem);
+
+        @include m.telefono{
+            @include m.grid(2, 2rem);
+        }
+
+        @include m.tablet{
+            @include m.grid(3, 2rem);
+        }
+        @include m.desktop{
+            @include m.grid(4, 2rem);
+        }
+        img{
+           height: 20rem;
+           object-fit: cover;
+            cursor: pointer;
+
+        }
+    }
+}
+
+.modal{
+    position: fixed;
+    inset: 0;//posiciona todo el elemento por delante, solo se usa cuando se utliza position
+
+    background-color: rgba( v.$negro,  0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn ease-in 0.5s;
+
+        &.fade-out{
+            animation: fadeOut ease-in 0.5s;
+
+        }
+
+    img{
+        max-width: 80rem;
+
+    }
+}
+
+.btn-close{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    margin-left: 20px;
+    cursor: pointer;
+    font-weight: 700;
+   
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
