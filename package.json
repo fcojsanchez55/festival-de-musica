@@ -26,6 +26,7 @@
   "homepage": "https://github.com/fcojsanchez55/festival-musica#readme",
   "devDependencies": {
     "gulp": "^5.0.0",
+    "gulp-clean": "^0.4.0",
     "gulp-sass": "^5.1.0",
     "sass": "^1.77.6"
   }
