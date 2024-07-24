@@ -1,33 +1,32 @@
-import {src, dest, watch, series, parallel} from 'gulp'
-import * as dartSass from 'sass'
-import gulpSass from 'gulp-sass'
-
+import { src, dest, watch, series, parallel } from 'gulp';
+import * as dartSass from 'sass';
+import gulpSass from 'gulp-sass';
 
 const sass = gulpSass(dartSass);
 
-export function js(done){
+export function js(done) {
     src('src/js/app.js')
-        .pipe(dest('build/js') )
-    done()
+        .pipe(dest('build/js'));
+    done();
 }
 
-export function css(done){
-    src('src/scss/app.scss', {sourcemaps: true})
-     .pipe(sass().on('error', sass.logError))//sass.logError marca errores si algun documento esta mal
-     //hace que se ejecute el archivo automaticamente!
-     .pipe(dest('build/css', {sourcemaps: true}))
-    done()
+export function css(done) {
+    src('src/scss/app.scss', { sourcemaps: true })
+        .pipe(sass().on('error', sass.logError))
+        .pipe(dest('build/css', { sourcemaps: true }));
+    done();
 }
 
 export function dev() {
-    watch('src/scss/**/*.scss', css)
-    watch('src/js/**/*.js', js)
-
+    watch('src/scss/**/*.scss', css);
+    watch('src/js/**/*.js', js);
 }
 
+// Define the 'build' task
 export const build = series(js, css);
 
-export default series(js, css, dev)
+export default series(build, dev);
+
 
 
 
